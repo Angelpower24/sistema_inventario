@@ -27,7 +27,7 @@ class Producto:
         fecha_creacion (str): Fecha de creacion
     """
     
-    __contador = 1000
+    _contador = 1000
     
     def __init__(self, nombre: str, descripcion: str, precio: float,
                  cantidad: int, categoria: Categoria):
@@ -57,28 +57,28 @@ class Producto:
         self.categoria = categoria
         self.fecha_creacion = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         
-def actualizar_cantidad(self, cantidad: int) -> bool:
-    """Actualiza la cantidad de producto."""
-    if cantidad < 0:
-        raise ValueError("La cantidad no puede ser negativa")
-    self.cantidad = cantidad
-    return True
+    def actualizar_cantidad(self, cantidad: int) -> bool:
+        """Actualiza la cantidad de producto."""
+        if cantidad < 0:
+             raise ValueError("La cantidad no puede ser negativa")
+        self.cantidad = cantidad
+        return True
 
-def actualizar_precio(self, precio: float) -> bool:
-    """Actualiza el precio del producto."""
-    if precio < 0:
-        raise ValueError("El precio no puede ser negativo")
-    self.precio = precio
-    return True
+    def actualizar_precio(self, precio: float) -> bool:
+        """Actualiza el precio del producto."""
+        if precio < 0:
+            raise ValueError("El precio no puede ser negativo")
+        self.precio = precio
+        return True
 
-def calcular_valor_total(self) -> float:
-    """Calcula el valor total del producto en stock."""
-    return self.precio * self.cantidad
+    def calcular_valor_total(self) -> float:
+        """Calcula el valor total del producto en stock."""
+        return self.precio * self.cantidad
 
-def __str__(self) -> str:
-    """Representacion en string del producto."""
-    return f"[{self.id_producto}] {self.nombre} - ${self.precio:.2f} (Stock: {self.cantidad})"
+    def __str__(self) -> str:
+        """Representacion en string del producto."""
+        return f"[{self.id_producto}] {self.nombre} - ${self.precio:.2f} (Stock: {self.cantidad})"
 
-def __repr__(self) -> str:
-    """Representacion tecnica del producto."""
-    return f"Producto(id={self.id_producto}, nombre='{self.nombre}', precio={self.precio}, cantidad={self.cantidad})"
+    def __repr__(self) -> str:
+        """Representacion tecnica del producto."""
+        return f"Producto(id={self.id_producto}, nombre='{self.nombre}', precio={self.precio}, cantidad={self.cantidad})"
